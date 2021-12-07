@@ -23,7 +23,6 @@ class FinancialExportService {
 
     const fields = ['nome', 'descricao', 'tipo', 'preco', 'categoria', 'data'];
 
-    // const json2csvParser = new json2csv.Parser({ fields });
     const document = json2csv.parse(datacsv, { fields: fields });
     fs.writeFile('teste.csv', document, function(err) {
       if(err) {
